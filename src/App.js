@@ -1,26 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-import BooksAvailable from './components/BooksAvailable';
+import React from "react";
+import BooksAvailable from "./components/BooksAvailable";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >sandy  first change
-       {BooksAvailable()}
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component{
+  state = { 
+    name : 'sandeep',
+    age : ' 30 ',
+    gender : 'male',
+
+  }
+  render(){
+    return(
+      <div>
+        <center>
+          <h3> Hello Welcome to Sandeep Book store. 
+          </h3>
+          <BooksAvailable  name={this.state.name}
+                            age={this.state.age}
+                            gender= {this.state.gender} />
+        </center>
+      </div>
+    )
+  }
 }
 
 export default App;
